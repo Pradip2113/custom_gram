@@ -9,6 +9,21 @@ app_license = "mit"
 # Includes in <head>
 # ------------------
 
+doc_events = {
+    "Sales Order": {
+        "after_save": "custom_gram.custom_gram.custallcode.set_cost_center",
+    },
+    "Delivery Note": {
+        "after_save": "custom_gram.custom_gram.custallcode.set_cost",
+    },
+    "Sales Invoice": {
+        "after_save": "custom_gram.custom_gram.custallcode.set_cost",
+    }
+}
+
+
+
+
 # include js, css files in header of desk.html
 # app_include_css = "/assets/custom_gram/css/custom_gram.css"
 # app_include_js = "/assets/custom_gram/js/custom_gram.js"
