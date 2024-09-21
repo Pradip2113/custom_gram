@@ -9,18 +9,23 @@ app_license = "mit"
 # Includes in <head>
 # ------------------
 
-doc_events = {
-    "Sales Order": {
-        "after_save": "custom_gram.custom_gram.custallcode.set_cost_center",
-    },
-    "Delivery Note": {
-        "after_save": "custom_gram.custom_gram.custallcode.set_cost",
-    },
-    "Sales Invoice": {
-        "after_save": "custom_gram.custom_gram.custallcode.set_cost",
-    }
-}
+# doc_events = {
+#     "Sales Order": {
+#         "onload": "custom_gram.custom_gram.custallcode.set_cost_center",
+#     },
+#     "Delivery Note": {
+#         "onload": "custom_gram.custom_gram.custallcode.set_cost",
+#     },
+#     "Sales Invoice": {
+#         "onload": "custom_gram.custom_gram.custallcode.set_cost",
+#     }
+# }
 
+doctype_js = {
+    "Sales Order": "public/js/set_cost_center.js",
+    "Sales Invoice": "public/js/set_cost_center.js",
+    "Delivery Note": "public/js/set_cost_center.js"
+}
 
 
 
